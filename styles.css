@@ -44,19 +44,26 @@ button {
 }
 
 .hero {
-  min-height: 100svh;
+  height: 100svh;
+  max-height: 100svh;
   display: grid;
-  place-items: center;
+  grid-template-rows: 1fr auto;
+  justify-items: center;
+  align-items: stretch;
   background: #000;
-  padding: clamp(2rem, 6vh, 4rem) 1.25rem;
+  padding: clamp(1.25rem, 4vh, 2.5rem) 1.25rem
+    max(clamp(1rem, 2.5vh, 1.35rem), env(safe-area-inset-bottom, 0px));
+  overflow: hidden;
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   width: min(100%, 36rem);
+  align-self: center;
 }
 
 .hero__eyebrow {
@@ -205,6 +212,33 @@ button {
 .hero__content:has(.plant-btn.is-watering) .water-hint {
   opacity: 0.25;
   animation: none;
+}
+
+.hero__ig {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ember-glow);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  animation: rise 1.15s var(--ease) 0.28s both;
+}
+
+.hero__ig:hover,
+.hero__ig:focus-visible {
+  opacity: 1;
+  color: var(--cream);
+  outline: none;
+}
+
+.hero__ig-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
 }
 
 /* Watering sequence ~2.5s */
@@ -459,6 +493,7 @@ button {
   .hero__title,
   .plant-btn,
   .water-hint,
+  .hero__ig,
   .plant-btn.is-watering .plant-btn__can,
   .plant-btn.is-watering .plant-btn__drops i,
   .plant-btn.is-watering .plant-btn__flower,
@@ -472,5 +507,43 @@ button {
 
   .water-hint {
     opacity: 0.7;
+  }
+}
+
+@media (max-height: 700px) {
+  .hero__title {
+    font-size: clamp(3rem, 14vw, 5.5rem);
+  }
+
+  .plant-btn {
+    margin-top: 0.85rem;
+  }
+
+  .plant-btn__scene {
+    width: 120px;
+    height: 130px;
+  }
+
+  .plant-btn__pot {
+    width: 108px;
+  }
+
+  .water-hint {
+    margin-top: 0.55rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__title {
+    font-size: clamp(2.8rem, 16vw, 4.8rem);
+  }
+
+  .hero__ig {
+    font-size: 0.68rem;
+  }
+
+  .hero__ig-icon {
+    width: 0.92rem;
+    height: 0.92rem;
   }
 }
