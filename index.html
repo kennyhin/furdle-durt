@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Coiny&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -20,20 +20,11 @@
   <body>
     <main class="hero" id="top">
       <div class="hero__content">
-        <img
-          class="hero__logo"
-          src="assets/gallery/logo-clean.jpg"
-          alt="furdle durt logo"
-          width="220"
-          height="220"
-        />
         <p class="hero__eyebrow">organic rock</p>
         <h1 class="hero__title">
           <span>furdle</span>
           <span>durt</span>
         </h1>
-
-        <p class="water-hint" id="water-hint">click to water</p>
 
         <button
           type="button"
@@ -41,6 +32,7 @@
           id="plant-btn"
           aria-haspopup="dialog"
           aria-controls="shows-modal"
+          aria-label="Water the plant to see upcoming shows"
           aria-describedby="water-hint"
         >
           <span class="plant-btn__scene" aria-hidden="true">
@@ -58,7 +50,15 @@
                   stroke-width="3"
                   stroke-linecap="round"
                 />
-                <ellipse cx="28" cy="18" rx="10" ry="4" fill="#e87a2a" stroke="#3a2418" stroke-width="2" />
+                <ellipse
+                  cx="28"
+                  cy="18"
+                  rx="10"
+                  ry="4"
+                  fill="#e87a2a"
+                  stroke="#3a2418"
+                  stroke-width="2"
+                />
               </svg>
             </span>
             <span class="plant-btn__drops">
@@ -82,10 +82,29 @@
                   stroke-width="4"
                   stroke-linecap="round"
                 />
-                <ellipse class="plant-btn__leaf plant-btn__leaf--l" cx="44" cy="58" rx="14" ry="7" fill="#4a6b32" stroke="#3a2418" stroke-width="2" transform="rotate(-28 44 58)" />
-                <ellipse class="plant-btn__leaf plant-btn__leaf--r" cx="76" cy="58" rx="14" ry="7" fill="#4a6b32" stroke="#3a2418" stroke-width="2" transform="rotate(28 76 58)" />
+                <ellipse
+                  class="plant-btn__leaf plant-btn__leaf--l"
+                  cx="44"
+                  cy="58"
+                  rx="14"
+                  ry="7"
+                  fill="#4a6b32"
+                  stroke="#3a2418"
+                  stroke-width="2"
+                  transform="rotate(-28 44 58)"
+                />
+                <ellipse
+                  class="plant-btn__leaf plant-btn__leaf--r"
+                  cx="76"
+                  cy="58"
+                  rx="14"
+                  ry="7"
+                  fill="#4a6b32"
+                  stroke="#3a2418"
+                  stroke-width="2"
+                  transform="rotate(28 76 58)"
+                />
                 <g class="plant-btn__flower">
-                  <circle cx="60" cy="34" r="7" fill="#f0c14a" stroke="#3a2418" stroke-width="2" />
                   <circle cx="60" cy="18" r="9" fill="#d35400" stroke="#3a2418" stroke-width="2" />
                   <circle cx="46" cy="28" r="9" fill="#d35400" stroke="#3a2418" stroke-width="2" />
                   <circle cx="74" cy="28" r="9" fill="#d35400" stroke="#3a2418" stroke-width="2" />
@@ -101,8 +120,9 @@
               </svg>
             </span>
           </span>
-          <span class="plant-btn__label">upcoming shows</span>
         </button>
+
+        <p class="water-hint" id="water-hint">click to water</p>
       </div>
     </main>
 
@@ -119,48 +139,12 @@
         <button type="button" class="modal__close" data-close aria-label="Close">
           close
         </button>
-        <header class="section-head">
-          <p class="section-kicker">on the road</p>
-          <h2 id="shows-title">Upcoming shows</h2>
-          <p class="section-lede">
-            Catch furdle durt live. Dates below are placeholders — swap in your
-            real calendar anytime.
-          </p>
-        </header>
-        <ul class="show-list">
-          <li class="show-card">
-            <time datetime="2026-08-22">Aug 22</time>
-            <div class="show-card__meta">
-              <strong>The Bonfire</strong>
-              <span>Las Vegas, NV</span>
-            </div>
-            <span class="show-card__status">doors 8pm</span>
-          </li>
-          <li class="show-card">
-            <time datetime="2026-09-12">Sep 12</time>
-            <div class="show-card__meta">
-              <strong>Skinny Barbells</strong>
-              <span>Las Vegas, NV</span>
-            </div>
-            <span class="show-card__status">with friends</span>
-          </li>
-          <li class="show-card">
-            <time datetime="2026-10-03">Oct 03</time>
-            <div class="show-card__meta">
-              <strong>TBA</strong>
-              <span>Southern Nevada</span>
-            </div>
-            <span class="show-card__status">announcing soon</span>
-          </li>
-        </ul>
-        <a
-          class="modal__ig"
-          href="https://www.instagram.com/furdle.durt/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @furdle.durt
-        </a>
+        <h2 id="shows-title" class="modal__title">Upcoming shows</h2>
+        <img
+          class="modal__poster"
+          src="assets/gallery/show-poster.jpg"
+          alt="Furdle Durt at Brooklyn Bowl Las Vegas — Saturday, August 1, 2026, 7:00 P.M., opening for Red Eye Gin"
+        />
       </div>
     </div>
 

@@ -11,8 +11,7 @@
     lastFocus = document.activeElement;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
-    const closeBtn = modal.querySelector(".modal__close");
-    closeBtn?.focus();
+    modal.querySelector(".modal__close")?.focus();
   };
 
   const closeModal = () => {
@@ -29,26 +28,17 @@
     busy = true;
     btn.disabled = true;
     btn.classList.remove("is-watering");
-    // restart CSS animation
     void btn.offsetWidth;
     btn.classList.add("is-watering");
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const delay = reduced ? 120 : 1450;
-    window.setTimeout(() => {
-      openModal();
-    }, delay);
+    const delay = reduced ? 120 : 2600;
+    window.setTimeout(openModal, delay);
   };
 
   btn.addEventListener("click", waterThenOpen);
-
-  closeEls.forEach((el) => {
-    el.addEventListener("click", closeModal);
-  });
-
+  closeEls.forEach((el) => el.addEventListener("click", closeModal));
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !modal.hidden) {
-      closeModal();
-    }
+    if (event.key === "Escape" && !modal.hidden) closeModal();
   });
 })();
