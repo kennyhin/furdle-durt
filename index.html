@@ -7,7 +7,7 @@
     <title>furdle durt — organic rock</title>
     <meta
       name="description"
-      content="furdle durt — organic rock. Upcoming shows."
+      content="furdle durt — organic rock. Music, gallery, and merch."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,8 +32,8 @@
           class="plant-btn"
           id="plant-btn"
           aria-haspopup="dialog"
-          aria-controls="shows-modal"
-          aria-label="Water the plant to see upcoming shows"
+          aria-controls="site-modal"
+          aria-label="Water the plant to open music, gallery, and merch"
           aria-describedby="water-hint"
         >
           <span class="plant-btn__scene" aria-hidden="true">
@@ -152,23 +152,104 @@
 
     <div
       class="modal"
-      id="shows-modal"
+      id="site-modal"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="shows-title"
+      aria-labelledby="site-nav-label"
       hidden
     >
       <div class="modal__backdrop" data-close></div>
-      <div class="modal__panel" role="document">
+      <div class="modal__panel modal__panel--site" role="document">
         <button type="button" class="modal__close" data-close aria-label="Close">
           close
         </button>
-        <h2 id="shows-title" class="modal__title">Upcoming shows</h2>
-        <img
-          class="modal__poster"
-          src="assets/gallery/show-poster.jpg"
-          alt="Furdle Durt at Brooklyn Bowl Las Vegas — Saturday, August 1, 2026, 7:00 P.M., opening for Red Eye Gin"
-        />
+
+        <p id="site-nav-label" class="site-nav__eyebrow">explore</p>
+        <nav class="site-nav" role="tablist" aria-label="Site sections">
+          <button
+            type="button"
+            class="site-nav__btn"
+            role="tab"
+            data-panel="music"
+            aria-selected="false"
+            aria-controls="panel-music"
+            id="tab-music"
+          >
+            Music
+          </button>
+          <button
+            type="button"
+            class="site-nav__btn"
+            role="tab"
+            data-panel="gallery"
+            aria-selected="false"
+            aria-controls="panel-gallery"
+            id="tab-gallery"
+          >
+            Gallery
+          </button>
+          <button
+            type="button"
+            class="site-nav__btn is-active"
+            role="tab"
+            data-panel="merch"
+            aria-selected="true"
+            aria-controls="panel-merch"
+            id="tab-merch"
+          >
+            Merch
+          </button>
+        </nav>
+
+        <div class="site-panels">
+          <section
+            class="site-panel"
+            id="panel-music"
+            role="tabpanel"
+            aria-labelledby="tab-music"
+            data-panel-id="music"
+            hidden
+          >
+            <p class="site-panel__soon">Tunes on the way.</p>
+          </section>
+
+          <section
+            class="site-panel"
+            id="panel-gallery"
+            role="tabpanel"
+            aria-labelledby="tab-gallery"
+            data-panel-id="gallery"
+            hidden
+          >
+            <p class="site-panel__soon">Photos coming soon.</p>
+          </section>
+
+          <section
+            class="site-panel"
+            id="panel-merch"
+            role="tabpanel"
+            aria-labelledby="tab-merch"
+            data-panel-id="merch"
+          >
+            <article class="merch-item">
+              <img
+                class="merch-item__image"
+                src="assets/merch/logo-tee-black.jpg"
+                alt="Black t-shirt with the Furdle Durt logo printed on the chest"
+                width="900"
+                height="900"
+              />
+              <div class="merch-item__copy">
+                <h2 class="merch-item__title">Logo Tee</h2>
+                <p class="merch-item__price">$25</p>
+                <p class="merch-item__note">Black tee · circular logo print</p>
+                <button type="button" class="merch-item__buy" disabled>
+                  Checkout soon
+                </button>
+              </div>
+            </article>
+          </section>
+        </div>
       </div>
     </div>
 
