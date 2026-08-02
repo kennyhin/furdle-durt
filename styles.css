@@ -350,6 +350,11 @@ button {
   animation: panel-in 0.4s var(--ease) both;
 }
 
+.modal__panel--site {
+  width: min(440px, 100%);
+  padding: 1.5rem 1.15rem 1.35rem;
+}
+
 .modal__close {
   position: absolute;
   top: 0.85rem;
@@ -370,23 +375,141 @@ button {
   outline: none;
 }
 
-.modal__title {
-  margin: 0 2.5rem 0.95rem 0;
+.site-nav__eyebrow {
+  margin: 0 2.5rem 0.65rem 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.36em;
+  text-transform: uppercase;
+  color: var(--fog);
+  text-align: center;
+}
+
+.site-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.4rem;
+  margin: 0 0 1.15rem;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-nav__btn {
+  appearance: none;
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(243, 230, 208, 0.62);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.75rem 0.2rem 0.85rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.site-nav__btn:hover,
+.site-nav__btn:focus-visible {
+  color: var(--cream);
+  outline: none;
+}
+
+.site-nav__btn.is-active {
+  color: var(--ember-glow);
+}
+
+.site-nav__btn.is-active::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: -1px;
+  height: 2px;
+  background: var(--ember-glow);
+  box-shadow: 0 0 12px rgba(232, 122, 42, 0.45);
+}
+
+.site-nav__btn.is-active:hover,
+.site-nav__btn.is-active:focus-visible {
+  color: var(--ember-glow);
+}
+
+.site-panel {
+  min-height: 12rem;
+  animation: panel-in 0.35s var(--ease) both;
+}
+
+.site-panel__soon {
+  margin: 2.4rem 0;
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: rgba(243, 230, 208, 0.55);
+}
+
+.merch-item {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.merch-item__image {
+  width: min(260px, 72%);
+  border-radius: 16px;
+  border: 1px solid rgba(211, 84, 0, 0.28);
+  background: #14110f;
+}
+
+.merch-item__copy {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: center;
+  width: 100%;
+}
+
+.merch-item__title {
+  margin: 0;
   font-family: var(--font-logo);
-  font-size: clamp(1.6rem, 6vw, 2.1rem);
+  font-size: clamp(1.55rem, 6vw, 2rem);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ember);
   -webkit-text-stroke: 2px var(--clay);
   paint-order: stroke fill;
   text-shadow: 0 2px 0 var(--clay);
-  text-align: center;
 }
 
-.modal__poster {
-  width: 100%;
+.merch-item__price {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--cream);
+}
+
+.merch-item__note {
+  margin: 0 0 0.55rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: rgba(243, 230, 208, 0.55);
+}
+
+.merch-item__buy {
+  appearance: none;
+  border: 1px solid rgba(232, 122, 42, 0.45);
   border-radius: 12px;
-  border: 1px solid rgba(211, 84, 0, 0.35);
+  background: transparent;
+  color: rgba(243, 230, 208, 0.55);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.35rem;
+  cursor: not-allowed;
 }
 
 @keyframes rise {

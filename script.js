@@ -1,17 +1,32 @@
 (() => {
   const btn = document.getElementById("plant-btn");
-  const modal = document.getElementById("shows-modal");
+  const modal = document.getElementById("site-modal");
   if (!btn || !modal) return;
 
   const closeEls = modal.querySelectorAll("[data-close]");
+  const navBtns = modal.querySelectorAll("[data-panel]");
+  const panels = modal.querySelectorAll("[data-panel-id]");
   let busy = false;
   let lastFocus = null;
+
+  const setPanel = (id) => {
+    navBtns.forEach((el) => {
+      const active = el.dataset.panel === id;
+      el.classList.toggle("is-active", active);
+      el.setAttribute("aria-selected", active ? "true" : "false");
+    });
+    panels.forEach((panel) => {
+      const active = panel.dataset.panelId === id;
+      panel.hidden = !active;
+    });
+  };
 
   const openModal = () => {
     lastFocus = document.activeElement;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
-    modal.querySelector(".modal__close")?.focus();
+    setPanel("merch");
+    modal.querySelector(".site-nav__btn.is-active")?.focus();
   };
 
   const closeModal = () => {
@@ -38,6 +53,9 @@
 
   btn.addEventListener("click", waterThenOpen);
   closeEls.forEach((el) => el.addEventListener("click", closeModal));
+  navBtns.forEach((el) => {
+    el.addEventListener("click", () => setPanel(el.dataset.panel));
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !modal.hidden) closeModal();
   });
