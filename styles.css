@@ -471,48 +471,46 @@ button {
   isolation: isolate;
 }
 
+/* Soft moving washes over BumbleSOL's baked glow so it feels alive */
 .merch-item__frame::before,
 .merch-item__frame::after {
   content: "";
   position: absolute;
-  z-index: 0;
+  z-index: 2;
   border-radius: 50%;
   pointer-events: none;
   mix-blend-mode: screen;
 }
 
 .merch-item__frame::before {
-  width: 78%;
-  height: 88%;
+  inset: 8% 12%;
   background:
-    radial-gradient(circle at 50% 45%, rgba(232, 122, 42, 0.7), transparent 68%),
-    radial-gradient(circle at 35% 60%, rgba(240, 193, 74, 0.45), transparent 58%);
-  filter: blur(22px);
+    radial-gradient(circle at 48% 42%, rgba(255, 210, 90, 0.55), transparent 62%),
+    radial-gradient(circle at 36% 62%, rgba(232, 122, 42, 0.4), transparent 58%);
+  filter: blur(18px);
+  opacity: 0.45;
   animation: groovy-glow-a 4.2s ease-in-out infinite alternate;
 }
 
 .merch-item__frame::after {
-  width: 70%;
-  height: 80%;
+  inset: 14% 16%;
   background:
-    radial-gradient(circle at 62% 40%, rgba(243, 230, 208, 0.35), transparent 55%),
-    radial-gradient(circle at 48% 70%, rgba(211, 84, 0, 0.55), transparent 62%);
-  filter: blur(26px);
+    radial-gradient(circle at 60% 38%, rgba(243, 230, 208, 0.35), transparent 55%),
+    radial-gradient(circle at 50% 72%, rgba(180, 90, 20, 0.45), transparent 60%);
+  filter: blur(22px);
+  opacity: 0.4;
   animation: groovy-glow-b 5.1s ease-in-out infinite alternate-reverse;
 }
 
 .merch-item__image {
   position: relative;
   z-index: 1;
-  width: 92%;
+  width: 100%;
   height: auto;
   aspect-ratio: 1;
-  object-fit: contain;
-  background: transparent;
-  filter:
-    drop-shadow(0 0 10px rgba(232, 122, 42, 0.45))
-    drop-shadow(0 0 22px rgba(240, 193, 74, 0.28));
-  animation: shirt-rim-pulse 3.6s ease-in-out infinite alternate;
+  object-fit: cover;
+  background: #000;
+  animation: groovy-tee-pulse 3.8s ease-in-out infinite alternate;
 }
 
 .merch-item__copy {
@@ -711,16 +709,14 @@ button {
   }
 }
 
-@keyframes shirt-rim-pulse {
+@keyframes groovy-tee-pulse {
   0% {
-    filter:
-      drop-shadow(0 0 8px rgba(232, 122, 42, 0.35))
-      drop-shadow(0 0 18px rgba(240, 193, 74, 0.18));
+    filter: brightness(0.96) saturate(1) contrast(1);
+    transform: scale(1);
   }
   100% {
-    filter:
-      drop-shadow(0 0 16px rgba(232, 122, 42, 0.7))
-      drop-shadow(0 0 30px rgba(240, 193, 74, 0.4));
+    filter: brightness(1.1) saturate(1.22) contrast(1.04);
+    transform: scale(1.015);
   }
 }
 
@@ -749,9 +745,8 @@ button {
   }
 
   .merch-item__image {
-    filter:
-      drop-shadow(0 0 12px rgba(232, 122, 42, 0.5))
-      drop-shadow(0 0 22px rgba(240, 193, 74, 0.28));
+    filter: none;
+    transform: none;
   }
 }
 
