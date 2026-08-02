@@ -458,10 +458,12 @@ button {
 }
 
 .merch-item__image {
-  width: min(260px, 72%);
+  width: min(280px, 78%);
+  aspect-ratio: 1;
+  object-fit: cover;
   border-radius: 16px;
   border: 1px solid rgba(211, 84, 0, 0.28);
-  background: #14110f;
+  background: #e8e8e8;
 }
 
 .merch-item__copy {
