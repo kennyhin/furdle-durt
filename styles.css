@@ -457,13 +457,62 @@ button {
   text-align: center;
 }
 
-.merch-item__image {
-  width: min(280px, 78%);
+.merch-item__frame {
+  position: relative;
+  width: min(300px, 82%);
   aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 1px solid rgba(211, 84, 0, 0.28);
-  background: #e8e8e8;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: #000;
+  border: 1px solid rgba(232, 122, 42, 0.22);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.merch-item__frame::before,
+.merch-item__frame::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.merch-item__frame::before {
+  width: 78%;
+  height: 88%;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(232, 122, 42, 0.7), transparent 68%),
+    radial-gradient(circle at 35% 60%, rgba(240, 193, 74, 0.45), transparent 58%);
+  filter: blur(22px);
+  animation: groovy-glow-a 4.2s ease-in-out infinite alternate;
+}
+
+.merch-item__frame::after {
+  width: 70%;
+  height: 80%;
+  background:
+    radial-gradient(circle at 62% 40%, rgba(243, 230, 208, 0.35), transparent 55%),
+    radial-gradient(circle at 48% 70%, rgba(211, 84, 0, 0.55), transparent 62%);
+  filter: blur(26px);
+  animation: groovy-glow-b 5.1s ease-in-out infinite alternate-reverse;
+}
+
+.merch-item__image {
+  position: relative;
+  z-index: 1;
+  width: 92%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: transparent;
+  filter:
+    drop-shadow(0 0 10px rgba(232, 122, 42, 0.45))
+    drop-shadow(0 0 22px rgba(240, 193, 74, 0.28));
+  animation: shirt-rim-pulse 3.6s ease-in-out infinite alternate;
 }
 
 .merch-item__copy {
@@ -640,6 +689,41 @@ button {
   }
 }
 
+@keyframes groovy-glow-a {
+  0% {
+    transform: translate(-6%, -4%) scale(0.92) rotate(-4deg);
+    opacity: 0.72;
+  }
+  100% {
+    transform: translate(8%, 6%) scale(1.12) rotate(6deg);
+    opacity: 1;
+  }
+}
+
+@keyframes groovy-glow-b {
+  0% {
+    transform: translate(7%, 5%) scale(1.08) rotate(5deg);
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(-8%, -6%) scale(0.9) rotate(-7deg);
+    opacity: 1;
+  }
+}
+
+@keyframes shirt-rim-pulse {
+  0% {
+    filter:
+      drop-shadow(0 0 8px rgba(232, 122, 42, 0.35))
+      drop-shadow(0 0 18px rgba(240, 193, 74, 0.18));
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 16px rgba(232, 122, 42, 0.7))
+      drop-shadow(0 0 30px rgba(240, 193, 74, 0.4));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero__eyebrow,
   .hero__title,
@@ -653,12 +737,21 @@ button {
   .plant-btn.is-watering .plant-btn__leaf--r,
   .plant-btn.is-watering .plant-btn__sparkles,
   .modal__backdrop,
-  .modal__panel {
+  .modal__panel,
+  .merch-item__frame::before,
+  .merch-item__frame::after,
+  .merch-item__image {
     animation: none !important;
   }
 
   .water-hint {
     opacity: 0.7;
+  }
+
+  .merch-item__image {
+    filter:
+      drop-shadow(0 0 12px rgba(232, 122, 42, 0.5))
+      drop-shadow(0 0 22px rgba(240, 193, 74, 0.28));
   }
 }
 
