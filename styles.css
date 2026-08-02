@@ -375,21 +375,11 @@ button {
   outline: none;
 }
 
-.site-nav__eyebrow {
-  margin: 0 2.5rem 0.65rem 0;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.36em;
-  text-transform: uppercase;
-  color: var(--fog);
-  text-align: center;
-}
-
 .site-nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.4rem;
-  margin: 0 0 1.15rem;
+  margin: 0 2.5rem 1.15rem 0;
   padding: 0;
   border: 0;
   border-bottom: 1px solid var(--line);
@@ -468,49 +458,16 @@ button {
   background: #000;
   border: 1px solid rgba(232, 122, 42, 0.22);
   overflow: hidden;
-  isolation: isolate;
 }
 
-/* Soft moving washes over BumbleSOL's baked glow so it feels alive */
-.merch-item__frame::before,
-.merch-item__frame::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  border-radius: 50%;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
-
-.merch-item__frame::before {
-  inset: 8% 12%;
-  background:
-    radial-gradient(circle at 48% 42%, rgba(255, 210, 90, 0.55), transparent 62%),
-    radial-gradient(circle at 36% 62%, rgba(232, 122, 42, 0.4), transparent 58%);
-  filter: blur(18px);
-  opacity: 0.45;
-  animation: groovy-glow-a 4.2s ease-in-out infinite alternate;
-}
-
-.merch-item__frame::after {
-  inset: 14% 16%;
-  background:
-    radial-gradient(circle at 60% 38%, rgba(243, 230, 208, 0.35), transparent 55%),
-    radial-gradient(circle at 50% 72%, rgba(180, 90, 20, 0.45), transparent 60%);
-  filter: blur(22px);
-  opacity: 0.4;
-  animation: groovy-glow-b 5.1s ease-in-out infinite alternate-reverse;
-}
-
+/* Show BumbleSOL mock as-is — glow stays on the shirt rim, logo stays clear */
 .merch-item__image {
-  position: relative;
-  z-index: 1;
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
   background: #000;
-  animation: groovy-tee-pulse 3.8s ease-in-out infinite alternate;
 }
 
 .merch-item__copy {
@@ -687,39 +644,6 @@ button {
   }
 }
 
-@keyframes groovy-glow-a {
-  0% {
-    transform: translate(-6%, -4%) scale(0.92) rotate(-4deg);
-    opacity: 0.72;
-  }
-  100% {
-    transform: translate(8%, 6%) scale(1.12) rotate(6deg);
-    opacity: 1;
-  }
-}
-
-@keyframes groovy-glow-b {
-  0% {
-    transform: translate(7%, 5%) scale(1.08) rotate(5deg);
-    opacity: 0.65;
-  }
-  100% {
-    transform: translate(-8%, -6%) scale(0.9) rotate(-7deg);
-    opacity: 1;
-  }
-}
-
-@keyframes groovy-tee-pulse {
-  0% {
-    filter: brightness(0.96) saturate(1) contrast(1);
-    transform: scale(1);
-  }
-  100% {
-    filter: brightness(1.1) saturate(1.22) contrast(1.04);
-    transform: scale(1.015);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero__eyebrow,
   .hero__title,
@@ -733,20 +657,12 @@ button {
   .plant-btn.is-watering .plant-btn__leaf--r,
   .plant-btn.is-watering .plant-btn__sparkles,
   .modal__backdrop,
-  .modal__panel,
-  .merch-item__frame::before,
-  .merch-item__frame::after,
-  .merch-item__image {
+  .modal__panel {
     animation: none !important;
   }
 
   .water-hint {
     opacity: 0.7;
-  }
-
-  .merch-item__image {
-    filter: none;
-    transform: none;
   }
 }
 
