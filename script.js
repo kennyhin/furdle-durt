@@ -57,6 +57,52 @@
     el.addEventListener("click", () => setPanel(el.dataset.panel));
   });
   document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || modal.hidden) return;
+    const poster = document.getElementById("poster-modal");
+    if (poster && !poster.hidden) return;
+    closeModal();
+  });
+})();
+
+(() => {
+  const modal = document.getElementById("poster-modal");
+  if (!modal) return;
+
+  const closeBtn = modal.querySelector(".modal__close");
+  const closeEls = modal.querySelectorAll("[data-poster-close]");
+
+  const isPastShow = () => {
+    const today = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Los_Angeles",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date());
+    return today > "2026-11-13";
+  };
+
+  const openModal = () => {
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    closeBtn?.focus();
+  };
+
+  const closeModal = () => {
+    if (modal.hidden) return;
+    modal.hidden = true;
+    const site = document.getElementById("site-modal");
+    if (!site || site.hidden) document.body.style.overflow = "";
+  };
+
+  closeEls.forEach((el) => el.addEventListener("click", closeModal));
+  modal.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab" || modal.hidden) return;
+    event.preventDefault();
+    closeBtn?.focus();
+  });
+  document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !modal.hidden) closeModal();
   });
+
+  if (!isPastShow()) openModal();
 })();

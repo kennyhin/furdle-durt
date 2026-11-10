@@ -151,6 +151,34 @@
     </main>
 
     <div
+      class="modal modal--poster"
+      id="poster-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Upcoming Furdle Durt show poster"
+      hidden
+    >
+      <div class="modal__backdrop" data-poster-close></div>
+      <div class="modal__panel modal__panel--poster" role="document">
+        <button
+          type="button"
+          class="modal__close modal__close--icon"
+          data-poster-close
+          aria-label="Close show poster"
+        >
+          ×
+        </button>
+        <img
+          class="poster-modal__image"
+          src="assets/gallery/hopnuts-nov13-poster.webp"
+          width="800"
+          height="1200"
+          alt="Furdle Durt live Friday, November 13, 2026, 7–11 PM at HopNuts Brewing, 1120 S Main St #150, Las Vegas, NV 89104, with special guest DJ Stacks."
+        />
+      </div>
+    </div>
+
+    <div
       class="modal"
       id="site-modal"
       role="dialog"
