@@ -375,6 +375,59 @@ button {
   outline: none;
 }
 
+.modal--poster {
+  z-index: 60;
+  padding: max(0.75rem, env(safe-area-inset-top, 0px))
+    0.75rem
+    max(0.75rem, env(safe-area-inset-bottom, 0px));
+}
+
+.modal__panel--poster {
+  width: auto;
+  max-width: min(800px, calc(100vw - 1.5rem));
+  max-height: calc(100svh - 1.5rem);
+  padding: 0;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid rgba(232, 122, 42, 0.28);
+}
+
+.modal__close--icon {
+  top: 0.45rem;
+  right: 0.45rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--cream);
+  font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  z-index: 2;
+}
+
+.modal__close--icon:hover,
+.modal__close--icon:focus-visible {
+  color: var(--ember-glow);
+  background: rgba(0, 0, 0, 0.9);
+  outline: 2px solid var(--ember-glow);
+  outline-offset: 2px;
+}
+
+.poster-modal__image {
+  width: auto;
+  height: auto;
+  max-width: min(800px, calc(100vw - 1.5rem));
+  max-height: calc(100svh - 1.5rem);
+  object-fit: contain;
+  margin: 0 auto;
+}
+
 .site-nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
