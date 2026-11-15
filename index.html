@@ -144,11 +144,14 @@
                     <stop offset=".55" stop-color="#4c7628" />
                     <stop offset="1" stop-color="#253d14" />
                   </linearGradient>
-                  <radialGradient id="fd-groovy-out" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#e87a2a" /><stop offset=".6" stop-color="#d35400" /><stop offset="1" stop-color="#a8321e" /></radialGradient>
-                  <radialGradient id="fd-groovy-mid" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#f7d57a" /><stop offset=".65" stop-color="#f0c14a" /><stop offset="1" stop-color="#d9962a" /></radialGradient>
-                  <radialGradient id="fd-groovy-cream" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#fbf1e0" /><stop offset=".7" stop-color="#f3e6d0" /><stop offset="1" stop-color="#d9c4a0" /></radialGradient>
-                  <radialGradient id="fd-groovy-pink" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#f3a9b6" /><stop offset=".7" stop-color="#e98a9a" /><stop offset="1" stop-color="#c8607a" /></radialGradient>
-                  <radialGradient id="fd-groovy-center" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#e87a2a" /><stop offset=".55" stop-color="#d35400" /><stop offset="1" stop-color="#7a2a10" /></radialGradient>
+                  <!-- gig-poster ink: flat orange, cream keyline, black halftone -->
+                  <path id="fd-petal-d" d="M-5.6,-6.0 C-8.4,-8.8 -10.8,-12.6 -9.4,-17.2 C-8.3,-20.8 -5.2,-24.0 -1.6,-25.2 C0.2,-25.7 1.8,-25.4 3.4,-24.4 C7.0,-22.2 9.6,-18.0 8.8,-13.8 C8.2,-10.4 6.0,-7.6 4.6,-5.6 C3.0,-4.2 0.2,-4.6 -5.6,-6.0 Z" />
+                  <pattern id="fd-halftone" width="3.4" height="3.4" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+                    <circle cx=".9" cy=".9" r=".72" fill="#0c0c0c" />
+                  </pattern>
+                  <pattern id="fd-halftone-fine" width="3.2" height="3.2" patternUnits="userSpaceOnUse" patternTransform="rotate(22)">
+                    <circle cx=".85" cy=".85" r=".7" fill="#0c0c0c" />
+                  </pattern>
                 </defs>
                 <!-- ground shadow -->
                 <ellipse cx="60" cy="123" rx="38" ry="6.5" fill="url(#fd-pot-shadow)" />
@@ -189,22 +192,121 @@
                   <path d="M57.6 55C62.8 46.2 73 41.8 83 44C77.8 52.8 67.6 57.2 57.6 55Z" fill="url(#fd-leaf)" stroke="#1f3310" stroke-width=".5" />
                   <path d="M58.2 54.6Q70 50 82 44.4M64.1 52.2L67.5 47.6M64.1 52.2L67.2 54.6M70 49.8L73.6 45.6M70 49.8L73.2 52" fill="none" stroke="#b6d27a" stroke-width=".5" stroke-linecap="round" opacity=".75" />
                 </g>
-                <!-- groovy 70s bloom: bubbly petal rings + center -->
-                <g class="plant-btn__flower">
+                <!-- rock-alt gig-poster bloom: stencil daisy, cream keyline, black halftone, no face -->
+                <g class="plant-btn__burst">
                   <g transform="translate(58 30)">
-                    <ellipse cy="-11.6" rx="7.6" ry="9" fill="url(#fd-groovy-out)" stroke="#3a2418" stroke-width="1.4" transform="rotate(0)" /><ellipse cy="-11.6" rx="7.6" ry="9" fill="url(#fd-groovy-out)" stroke="#3a2418" stroke-width="1.4" transform="rotate(60)" /><ellipse cy="-11.6" rx="7.6" ry="9" fill="url(#fd-groovy-out)" stroke="#3a2418" stroke-width="1.4" transform="rotate(120)" /><ellipse cy="-11.6" rx="7.6" ry="9" fill="url(#fd-groovy-out)" stroke="#3a2418" stroke-width="1.4" transform="rotate(180)" /><ellipse cy="-11.6" rx="7.6" ry="9" fill="url(#fd-groovy-out)" stroke="#3a2418" stroke-width="1.4" transform="rotate(240)" /><ellipse cy="-11.6" rx="7.6" ry="9" fill="url(#fd-groovy-out)" stroke="#3a2418" stroke-width="1.4" transform="rotate(300)" />
-                    <ellipse cy="-12.4" rx="3.6" ry="5" fill="url(#fd-groovy-mid)" stroke="#a8321e" stroke-width=".8" transform="rotate(0)" /><ellipse cy="-12.4" rx="3.6" ry="5" fill="url(#fd-groovy-mid)" stroke="#a8321e" stroke-width=".8" transform="rotate(60)" /><ellipse cy="-12.4" rx="3.6" ry="5" fill="url(#fd-groovy-mid)" stroke="#a8321e" stroke-width=".8" transform="rotate(120)" /><ellipse cy="-12.4" rx="3.6" ry="5" fill="url(#fd-groovy-mid)" stroke="#a8321e" stroke-width=".8" transform="rotate(180)" /><ellipse cy="-12.4" rx="3.6" ry="5" fill="url(#fd-groovy-mid)" stroke="#a8321e" stroke-width=".8" transform="rotate(240)" /><ellipse cy="-12.4" rx="3.6" ry="5" fill="url(#fd-groovy-mid)" stroke="#a8321e" stroke-width=".8" transform="rotate(300)" />
-                    <circle cy="-17.6" r="1.1" fill="#f3e6d0" opacity=".9" transform="rotate(0)" /><circle cy="-17.6" r="1.1" fill="#f3e6d0" opacity=".9" transform="rotate(60)" /><circle cy="-17.6" r="1.1" fill="#f3e6d0" opacity=".9" transform="rotate(120)" /><circle cy="-17.6" r="1.1" fill="#f3e6d0" opacity=".9" transform="rotate(180)" /><circle cy="-17.6" r="1.1" fill="#f3e6d0" opacity=".9" transform="rotate(240)" /><circle cy="-17.6" r="1.1" fill="#f3e6d0" opacity=".9" transform="rotate(300)" />
-                    <circle r="7.2" fill="url(#fd-groovy-pink)" stroke="#3a2418" stroke-width="1.4" />
-                    <circle r="4.6" fill="url(#fd-groovy-cream)" stroke="#3a2418" stroke-width="1" />
-                    <circle r="2.4" fill="url(#fd-groovy-center)" />
-                    <ellipse cx="-2.6" cy="-3.6" rx="2" ry="1.1" fill="#fff" opacity=".35" transform="rotate(-30 -2.6 -3.6)" />
+                    <circle class="plant-btn__glow" r="16" fill="#e85c00" />
+                      <path d="M-6.2,-11 L0,-42 L5.8,-11 Z" fill="#ffc056" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(0)" />
+                      <path d="M-4.5,-11 L0,-32 L5.0,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(36)" />
+                      <path d="M-6.2,-11 L0,-42 L5.8,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(72)" />
+                      <path d="M-4.5,-11 L0,-32 L5.0,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(108)" />
+                      <path d="M-6.2,-11 L0,-42 L5.8,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(144)" />
+                      <path d="M-4.5,-11 L0,-32 L5.0,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(180)" />
+                      <path d="M-6.2,-11 L0,-42 L5.8,-11 Z" fill="#ffc056" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(216)" />
+                      <path d="M-4.5,-11 L0,-32 L5.0,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(252)" />
+                      <path d="M-6.2,-11 L0,-42 L5.8,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(288)" />
+                      <path d="M-4.5,-11 L0,-32 L5.0,-11 Z" fill="#ff8a1a" stroke="#0c0c0c" stroke-width=".85" stroke-linejoin="round" transform="rotate(324)" />
+                  </g>
+                </g>
+                <g class="plant-btn__flower">
+                  <g class="plant-btn__petals">
+                    <g class="plant-btn__petal">
+                      <g transform="translate(58 30) rotate(0)">
+                        <use href="#fd-petal-d" fill="none" stroke="#f3e6d0" stroke-width="3.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" fill="#e85c00" stroke="#0c0c0c" stroke-width="2.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="#b83a00" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="url(#fd-halftone)" opacity=".42" />
+                      </g>
+                    </g>
+                    <g class="plant-btn__petal">
+                      <g transform="translate(58 30) rotate(61)">
+                        <use href="#fd-petal-d" fill="none" stroke="#f3e6d0" stroke-width="3.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" fill="#e85c00" stroke="#0c0c0c" stroke-width="2.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="#b83a00" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="url(#fd-halftone)" opacity=".42" />
+                      </g>
+                    </g>
+                    <g class="plant-btn__petal">
+                      <g transform="translate(58 30) rotate(118)">
+                        <use href="#fd-petal-d" fill="none" stroke="#f3e6d0" stroke-width="3.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" fill="#e85c00" stroke="#0c0c0c" stroke-width="2.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="#b83a00" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="url(#fd-halftone)" opacity=".42" />
+                      </g>
+                    </g>
+                    <g class="plant-btn__petal">
+                      <g transform="translate(58 30) rotate(182)">
+                        <use href="#fd-petal-d" fill="none" stroke="#f3e6d0" stroke-width="3.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" fill="#e85c00" stroke="#0c0c0c" stroke-width="2.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="#b83a00" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="url(#fd-halftone)" opacity=".42" />
+                      </g>
+                    </g>
+                    <g class="plant-btn__petal">
+                      <g transform="translate(58 30) rotate(239)">
+                        <use href="#fd-petal-d" fill="none" stroke="#f3e6d0" stroke-width="3.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" fill="#e85c00" stroke="#0c0c0c" stroke-width="2.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="#b83a00" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="url(#fd-halftone)" opacity=".42" />
+                      </g>
+                    </g>
+                    <g class="plant-btn__petal">
+                      <g transform="translate(58 30) rotate(301)">
+                        <use href="#fd-petal-d" fill="none" stroke="#f3e6d0" stroke-width="3.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" fill="#e85c00" stroke="#0c0c0c" stroke-width="2.25" stroke-linejoin="round" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="#b83a00" />
+                        <use href="#fd-petal-d" transform="scale(0.68)" fill="url(#fd-halftone)" opacity=".42" />
+                      </g>
+                    </g>
+                  </g>
+                  <g class="plant-btn__center">
+                    <g transform="translate(58 30)">
+                      <circle r="11.1" fill="#f3e6d0" />
+                      <circle r="9.6" fill="#0c0c0c" />
+                      <circle r="7.4" fill="#f3e6d0" />
+                      <circle r="5.2" fill="#e85c00" />
+                      <circle r="5.2" fill="url(#fd-halftone-fine)" opacity=".28" />
+                      <circle r="2.5" fill="#0c0c0c" />
+                    </g>
                   </g>
                 </g>
                 <g class="plant-btn__sparkles">
-                  <circle cx="28" cy="30" r="2.5" fill="#f3e6d0" />
-                  <circle cx="92" cy="38" r="2" fill="#f3e6d0" />
-                  <circle cx="84" cy="14" r="1.8" fill="#f0c14a" />
+                  <g class="plant-btn__spark">
+                    <circle cx="24" cy="12" r="2.6" fill="#e85c00" stroke="#0c0c0c" stroke-width=".6" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <circle cx="94" cy="16" r="2.3" fill="#f3e6d0" stroke="#0c0c0c" stroke-width=".55" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <circle cx="38" cy="2" r="2" fill="#0c0c0c" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <circle cx="80" cy="3" r="2.4" fill="#e85c00" stroke="#0c0c0c" stroke-width=".55" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <circle cx="16" cy="40" r="2.2" fill="#f3e6d0" stroke="#0c0c0c" stroke-width=".5" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <circle cx="102" cy="42" r="2.5" fill="#e85c00" stroke="#0c0c0c" stroke-width=".6" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <path transform="translate(16 26) rotate(12)" d="M0,-3.4 L2.1,1.6 L-1.8,2.4 Z" fill="#e85c00" stroke="#0c0c0c" stroke-width=".55" stroke-linejoin="round" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <path transform="translate(100 30) rotate(-18)" d="M0,-3.1 L2.4,2.0 L-2.0,1.2 Z" fill="#f3e6d0" stroke="#0c0c0c" stroke-width=".55" stroke-linejoin="round" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <path transform="translate(52 3) rotate(28)" d="M0,-2.6 L1.7,1.5 L-1.6,1.8 Z" fill="#0c0c0c" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <path transform="translate(70 2) rotate(-25)" d="M0,-2.8 L2.0,1.4 L-1.5,2.1 Z" fill="#e85c00" stroke="#0c0c0c" stroke-width=".55" stroke-linejoin="round" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <path transform="translate(32 52) rotate(8)" d="M0,-2.4 L1.8,1.7 L-2.1,1.1 Z" fill="#f3e6d0" stroke="#0c0c0c" stroke-width=".55" stroke-linejoin="round" />
+                  </g>
+                  <g class="plant-btn__spark">
+                    <path transform="translate(86 54) rotate(-30)" d="M0,-2.5 L2.2,1.3 L-1.4,1.9 Z" fill="#0c0c0c" />
+                  </g>
                 </g>
               </svg>
             </span>
