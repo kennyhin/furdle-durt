@@ -1,6 +1,6 @@
 # furdle durt — organic rock
 
-Black hero landing page: logo-styled title, plant you click to water, then a modal with the upcoming show poster.
+Black hero landing page: logo-styled title, plant you click to water, then a modal with music, gallery, and merch.
 
 ## Preview
 
