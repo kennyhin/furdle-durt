@@ -25,7 +25,7 @@
     lastFocus = document.activeElement;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
-    setPanel("merch");
+    setPanel("gallery");
     modal.querySelector(".site-nav__btn.is-active")?.focus();
   };
 
