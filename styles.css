@@ -157,9 +157,9 @@ button {
   position: absolute;
   top: 2px;
   right: 4px;
-  width: 58px;
+  width: 64px;
   opacity: 0;
-  transform: translate(18px, -12px) rotate(-18deg);
+  transform: translate(18px, -12px) rotate(18deg);
   z-index: 2;
 }
 
@@ -172,8 +172,9 @@ button {
 
 .plant-btn__drops {
   position: absolute;
-  top: 48px;
-  right: 44px;
+  /* Lines up with the rose head when the can is tilted (see can-pour at 40%-78%) */
+  top: 44px;
+  right: 52px;
   width: 28px;
   height: 50px;
   pointer-events: none;
@@ -197,10 +198,22 @@ button {
 }
 
 .plant-btn__flower,
-.plant-btn__leaf,
 .plant-btn__stem {
   transform-box: fill-box;
   transform-origin: center;
+}
+
+/* Leaves pivot where they join the stem (SVG user units of the pot viewBox) */
+.plant-btn__leaf {
+  transform-box: view-box;
+}
+
+.plant-btn__leaf--l {
+  transform-origin: 58.6px 64px;
+}
+
+.plant-btn__leaf--r {
+  transform-origin: 57.6px 55px;
 }
 
 .water-hint {
@@ -612,26 +625,27 @@ button {
   }
 }
 
+/* Spout faces left (toward the pot), so the can tips counter-clockwise to pour */
 @keyframes can-pour {
   0% {
     opacity: 0;
-    transform: translate(18px, -12px) rotate(-18deg);
+    transform: translate(18px, -12px) rotate(18deg);
   }
   18% {
     opacity: 1;
-    transform: translate(0, 0) rotate(-8deg);
+    transform: translate(0, 0) rotate(8deg);
   }
   40% {
     opacity: 1;
-    transform: translate(-6px, 8px) rotate(28deg);
+    transform: translate(-6px, 8px) rotate(-40deg);
   }
   78% {
     opacity: 1;
-    transform: translate(-6px, 8px) rotate(28deg);
+    transform: translate(-6px, 8px) rotate(-40deg);
   }
   100% {
     opacity: 0;
-    transform: translate(10px, -8px) rotate(-10deg);
+    transform: translate(10px, -8px) rotate(10deg);
   }
 }
 
@@ -663,25 +677,25 @@ button {
 
 @keyframes leaf-wave-l {
   0% {
-    transform: rotate(-28deg);
+    transform: rotate(0deg);
   }
   40% {
-    transform: rotate(-40deg);
+    transform: rotate(12deg);
   }
   100% {
-    transform: rotate(-24deg);
+    transform: rotate(4deg);
   }
 }
 
 @keyframes leaf-wave-r {
   0% {
-    transform: rotate(28deg);
+    transform: rotate(0deg);
   }
   40% {
-    transform: rotate(40deg);
+    transform: rotate(-12deg);
   }
   100% {
-    transform: rotate(24deg);
+    transform: rotate(-4deg);
   }
 }
 
@@ -755,6 +769,15 @@ button {
 
   .plant-btn__pot {
     width: 108px;
+  }
+
+  .plant-btn__can {
+    width: 52px;
+  }
+
+  .plant-btn__drops {
+    top: 38px;
+    right: 40px;
   }
 
   .water-hint {
