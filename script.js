@@ -47,7 +47,7 @@
     btn.classList.add("is-watering");
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const delay = reduced ? 120 : 3300;
+    const delay = reduced ? 120 : 2600;
     window.setTimeout(openModal, delay);
   };
 
